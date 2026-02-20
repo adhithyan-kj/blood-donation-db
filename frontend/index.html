@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarvam Maya | Blood Donation</title>
+    <meta name="description" content="A mobile-first blood donation platform. Donate, Request, and Save Lives.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@500;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-droplet"></i>
+                Sarvam <span>Maya</span>
+            </a>
+
+            <div class="mobile-menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#register">Register</a></li>
+                <li><a href="#actions">Donate & Request</a></li>
+                <li><a href="#banks">Blood Banks</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Home Section -->
+        <header id="home" class="hero slide-up">
+            <div class="hero-content">
+                <div class="icon-pulse">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                </div>
+                <h1 class="hero-title">Be A Lifesaver Today.</h1>
+                <p class="hero-subtitle">Bridging the gap between donors and recipients. Every drop you give is a life
+                    saved.</p>
+                <div class="hero-buttons">
+                    <a href="#register" class="btn btn-primary">Join the Network</a>
+                    <a href="#actions" class="btn btn-glass">Request Blood</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Registration Section (Donors & Recipients) -->
+        <section id="register" class="section fade-in">
+            <div class="section-header">
+                <h2>Join <span>Sarvam Maya</span></h2>
+                <p>Register yourself in our database to easily donate or receive blood.</p>
+            </div>
+
+            <div class="tabs-container">
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="donor-tab">Register as Donor</button>
+                    <button class="tab-btn" data-tab="recipient-tab">Register as Recipient</button>
+                </div>
+
+                <!-- Donor Form matches `donor` table -->
+                <div class="tab-content active" id="donor-tab">
+                    <form class="db-form" id="donorForm">
+                        <div class="input-group">
+                            <label><i class="fa-solid fa-user"></i> Full Name</label>
+                            <input type="text" name="name" required placeholder="e.g. Arun">
+                        </div>
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label><i class="fa-solid fa-calendar"></i> Age</label>
+                                <input type="number" name="age" required placeholder="e.g. 22">
+                            </div>
+                            <div class="input-group">
+                                <label><i class="fa-solid fa-droplet"></i> Blood Group</label>
+                                <select name="blood_group" required>
+                                    <option value="" disabled selected>Select</option>
+                                    <option value="A+">A+</option>
+                                    <option value="A-">A-</option>
+                                    <option value="B+">B+</option>
+                                    <option value="B-">B-</option>
+                                    <option value="AB+">AB+</option>
+                                    <option value="AB-">AB-</option>
+                                    <option value="O+">O+</option>
+                                    <option value="O-">O-</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label><i class="fa-solid fa-phone"></i> Phone Number</label>
+                            <input type="tel" name="phone" required placeholder="e.g. 9876543210">
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Submit Donor Details</button>
+                    </form>
+                </div>
+
+                <!-- Recipient Form matches `recipient` table -->
+                <div class="tab-content" id="recipient-tab">
+                    <form class="db-form" id="recipientForm">
+                        <div class="input-group">
+                            <label><i class="fa-solid fa-user"></i> Full Name</label>
+                            <input type="text" name="name" required placeholder="e.g. Rahul">
+                        </div>
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label><i class="fa-solid fa-calendar"></i> Age</label>
+                                <input type="number" name="age" required placeholder="e.g. 35">
+                            </div>
+                            <div class="input-group">
+                                <label><i class="fa-solid fa-droplet"></i> Blood Group</label>
+                                <select name="blood_group" required>
+                                    <option value="" disabled selected>Select</option>
+                                    <option value="A+">A+</option>
+                                    <option value="A-">A-</option>
+                                    <option value="B+">B+</option>
+                                    <option value="B-">B-</option>
+                                    <option value="AB+">AB+</option>
+                                    <option value="AB-">AB-</option>
+                                    <option value="O+">O+</option>
+                                    <option value="O-">O-</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label><i class="fa-solid fa-phone"></i> Phone Number</label>
+                            <input type="tel" name="phone" required placeholder="e.g. 9123456780">
+                        </div>
+                        <button type="submit" class="btn btn-outline w-100">Submit Recipient Details</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Actions Section (Log Donation & Request Blood) -->
+        <section id="actions" class="section fade-in">
+            <div class="section-header">
+                <h2>Log a <span>Donation</span> or <span>Request</span></h2>
+                <p>Record transactions matching our database schema.</p>
+            </div>
+
+            <div class="action-grid">
+                <!-- Log Donation corresponds to `donation` table -->
+                <div class="action-card glass-card slide-right">
+                    <h3><i class="fa-solid fa-hand-holding-droplet"></i> Record Donation</h3>
+                    <form class="db-form">
+                        <div class="input-group">
+                            <label>Donor ID</label>
+                            <input type="number" name="donor_id" required placeholder="Enter Donor ID">
+                        </div>
+                        <div class="input-group">
+                            <label>Blood Bank ID</label>
+                            <input type="number" name="bank_id" required placeholder="Enter Bank ID">
+                        </div>
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label>Date</label>
+                                <input type="date" name="donation_date" required>
+                            </div>
+                            <div class="input-group">
+                                <label>Qty (ml)</label>
+                                <input type="number" name="quantity_ml" required placeholder="450">
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary w-100">Log Donation</button>
+                    </form>
+                </div>
+
+                <!-- Request Blood corresponds to `request` table -->
+                <div class="action-card glass-card slide-left">
+                    <h3><i class="fa-solid fa-truck-medical"></i> Make Request</h3>
+                    <form class="db-form">
+                        <div class="input-group">
+                            <label>Recipient ID</label>
+                            <input type="number" name="recipient_id" required placeholder="Enter Recipient ID">
+                        </div>
+                        <div class="input-group">
+                            <label>Blood Bank ID</label>
+                            <input type="number" name="bank_id" required placeholder="Enter Bank ID">
+                        </div>
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label>Date</label>
+                                <input type="date" name="request_date" required>
+                            </div>
+                            <div class="input-group">
+                                <label>Qty (ml)</label>
+                                <input type="number" name="quantity_ml" required placeholder="300">
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-outline w-100">Submit Request</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blood Banks (matches `blood_bank` table) -->
+        <section id="banks" class="section fade-in">
+            <div class="section-header">
+                <h2>Our <span>Partner Banks</span></h2>
+                <p>Supported blood banks currently tracked in our system.</p>
+            </div>
+
+            <div class="bank-list">
+                <div class="bank-card hover-lift">
+                    <div class="bank-icon">
+                        <i class="fa-solid fa-hospital"></i>
+                    </div>
+                    <div class="bank-info">
+                        <h4>City Blood Bank</h4>
+                        <p><i class="fa-solid fa-location-dot"></i> Chennai</p>
+                    </div>
+                    <div class="bank-id">ID: 1</div>
+                </div>
+                <!-- Dynamic banks can be rendered here later -->
+                <div class="bank-card hover-lift ghost-card">
+                    <div class="bank-icon">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                    <div class="bank-info" style="opacity: 0.5;">
+                        <h4>More banks coming soon</h4>
+                        <p>Awaiting database connection...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="#" class="logo">
+                    <i class="fa-solid fa-droplet"></i>
+                    Sarvam <span>Maya</span>
+                </a>
+                <p>A seamless, mobile-first interface bridging the gap in blood donation management.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Sarvam Maya UI. Built for the DBMS Micro Project.</p>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+
+</html>
